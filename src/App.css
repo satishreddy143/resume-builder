@@ -1,38 +1,493 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #667eea, #764ba2);
   min-height: 100vh;
+}
+
+/* HEADER */
+
+.header {
+  text-align: center;
+  padding: 35px;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  border-radius: 15px;
+  margin: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.header h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.header p {
+  font-size: 18px;
+}
+
+/* TEMPLATE SECTION */
+
+.template-section {
+  margin: 20px;
+}
+
+.template-section h2 {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.template-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  gap: 20px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-wrap: wrap;
+}
+
+.template-card {
+  width: 300px;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.template-card:hover {
+  transform: translateY(-5px);
+}
+
+.template-card h3 {
+  color: #6a11cb;
+}
+
+.template-card p {
+  color: #555;
+}
+
+.template-card button {
+  margin-top: 10px;
+}
+
+.active {
+  border: 3px solid #6a11cb;
+}
+
+/* MAIN CONTAINER */
+
+.container {
+  display: flex;
+  gap: 30px;
+  padding: 30px;
+}
+
+/* FORM SECTION */
+
+.form-section {
+  width: 50%;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.form-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #5a189a;
+}
+
+/* INPUTS */
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 2px solid #c77dff;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #7b2cbf;
+  box-shadow: 0 0 5px rgba(123, 44, 191, 0.5);
+}
+
+textarea {
+  min-height: 80px;
+  resize: none;
+}
+
+/* PREVIEW SECTION */
+
+.preview-section {
+  width: 50%;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  min-height: 600px;
+}
+
+.preview-section h1 {
+  text-align: center;
+  color: #6a11cb;
+  margin-top: 10px;
+  font-size: 36px;
+}
+
+.preview-section p {
+  color: #444;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.preview-section h3 {
+  margin-top: 25px;
+  color: #2575fc;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 8px;
+}
+
+/* PROFILE IMAGE */
+
+.profile-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: auto;
+  border: 5px solid #6a11cb;
+  margin-bottom: 20px;
+}
+
+/* BUTTON */
+
+button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(to right, #7b2cbf, #9d4edd);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 17px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+button:hover {
+  transform: scale(1.03);
+  background: linear-gradient(to right, #5a189a, #7b2cbf);
+}
+
+/* DARK MODE */
+
+.dark {
+  background: #121212;
+  min-height: 100vh;
+}
+
+.dark .header {
+  background: linear-gradient(to right, #232526, #414345);
+}
+
+.dark .template-card,
+.dark .form-section,
+.dark .preview-section {
+  background: #1e1e1e;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.dark .template-card h3,
+.dark .preview-section h1,
+.dark .preview-section h3,
+.dark .form-section h2 {
+  color: #bb86fc;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.dark .template-card p,
+.dark .preview-section p,
+.dark .header p {
+  color: #dddddd;
+}
+
+.dark input,
+.dark textarea {
+  background: #2b2b2b;
+  color: white;
+  border: 1px solid #555;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #cccccc;
+}
+
+/* DARK MODE BUTTON */
+
+.dark-mode-btn {
+  text-align: center;
+  margin: 20px;
+}
+
+.dark-mode-btn button {
+  width: auto;
+  padding: 12px 25px;
+}
+
+/* SKILLS */
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.skill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* REMOVE BUTTON */
+
+.remove-btn {
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0;
+}
+
+.remove-btn:hover {
+  background: darkred;
+}
+
+/* SKILL INPUT BOX */
+
+.skill-box {
+  display: flex;
+  gap: 10px;
+}
+
+.skill-box input {
+  flex: 1;
+}
+
+.skill-box button {
+  width: 140px;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .form-section,
+  .preview-section {
+    width: 100%;
   }
+
+  .header h1 {
+    font-size: 30px;
+  }
+}
+/* ========================= */
+/* TEMPLATE DESIGNS */
+/* ========================= */
+
+/* MODERN TEMPLATE */
+
+.preview-section.modern {
+  border-top: 8px solid #6a11cb;
+}
+
+/* CLASSIC TEMPLATE */
+
+.preview-section.classic {
+  background: #f5f5f5;
+  border: 2px solid #999;
+  font-family: "Times New Roman", serif;
+}
+
+.preview-section.classic h1 {
+  color: #222;
+}
+
+.preview-section.classic h3 {
+  color: #444;
+  border-bottom: 1px solid #777;
+}
+
+/* DARK TEMPLATE */
+
+.preview-section.dark {
+  background: #1e1e1e;
+  color: white;
+}
+
+.preview-section.dark p,
+.preview-section.dark h1,
+.preview-section.dark h3 {
+  color: white;
+}
+
+.preview-section.dark h3 {
+  border-bottom: 2px solid #555;
+}
+/* MODERN TEMPLATE */
+
+.modern-template {
+  border-left: 8px solid #6a11cb;
+}
+
+/* CLASSIC TEMPLATE */
+
+.classic-template {
+  border-top: 10px solid #333;
+  background: #f8f8f8;
+}
+
+.classic-template h1 {
+  color: #222;
+  text-transform: uppercase;
+}
+
+.classic-template h3 {
+  color: #444;
+  border-bottom: 1px solid #999;
+}
+
+.classic-template .skill-tag {
+  background: #444;
+}
+/* ========================= */
+/* MODERN TEMPLATE */
+/* ========================= */
+
+.modern-template {
+  border-left: 8px solid #6a11cb;
+}
+
+/* ========================= */
+/* CLASSIC TEMPLATE */
+/* ========================= */
+
+.classic-template {
+  background: #f8f8f8;
+  border-top: 8px solid #444;
+}
+
+.classic-template h1 {
+  color: #222;
+  text-transform: uppercase;
+}
+
+.classic-template h3 {
+  color: #444;
+  border-bottom: 1px solid #999;
+}
+
+.classic-template .skill-tag {
+  background: #444;
+}
+
+/* ========================= */
+/* PROFESSIONAL TEMPLATE */
+/* ========================= */
+
+.professional-template {
+  background: #ffffff;
+  border-left: 10px solid #0a66c2;
+}
+
+.professional-template h1 {
+  color: #0a66c2;
+}
+
+.professional-template h3 {
+  color: #0a66c2;
+  border-bottom: 2px solid #0a66c2;
+}
+
+.professional-template .skill-tag {
+  background: #0a66c2;
+}
+/* RESUME SCORE */
+
+.score-box {
+  width: 300px;
+  margin: 20px auto;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.score-box h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* DARK MODE SCORE */
+
+.dark .score-box {
+  background: linear-gradient(to right, #232526, #414345);
+}
+/* ================= MODERN TEMPLATE ================= */
+
+.modern-template {
+  border-top: 8px solid #6a11cb;
+}
+
+/* ================= CLASSIC TEMPLATE ================= */
+
+.classic-template {
+  border-left: 8px solid #2575fc;
+  background: #f5f5f5;
+}
+
+.classic-template h1 {
+  color: #2575fc;
+}
+
+/* ================= PROFESSIONAL TEMPLATE ================= */
+
+.professional-template {
+  background: #1f1f1f;
+  color: white;
+  border-top: 8px solid #00c6ff;
+}
+
+.professional-template h1,
+.professional-template h3,
+.professional-template p {
+  color: white;
+}
+
+.professional-template .skill-tag {
+  background: #00c6ff;
 }
